@@ -90,6 +90,20 @@ window.decrementarCantidad = function(spanId) {
 }
 
 
+
+const mesaButtons = document.querySelectorAll('.mesa-btn');
+
+    mesaButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            mesaButtons.forEach(otherButton => {
+                if (otherButton !== button) {
+                    otherButton.checked = false;
+                }
+            });
+        });
+    });
+
+
 // Función para seleccionar la mesa
 function seleccionarMesa(numeroMesa) {
     // Puedes realizar acciones relacionadas con la selección de la mesa aquí
@@ -212,6 +226,58 @@ checkIcons.forEach(function(icon) {
         mostrarOcultarBotonPedir();
     });
 });
+
+// Función para abrir el modal
+
+function abrirModal() {
+    const modal = document.getElementById('modalPedido');
+    modal.style.display = 'block';
+
+    // Llenar el contenido del modal con el resumen del pedido
+    const resumenPedido = document.getElementById('resumenPedido');
+    resumenPedido.innerHTML = obtenerResumenPedido();
+
+    // Mostrar el precio total del pedido
+    const precioTotalPedido = document.getElementById('precioTotalPedido');
+    precioTotalPedido.textContent = 'Total: ' + calcularPrecioTotalPedido();
+}
+
+const pedir =document.getElementById('botonPedir');
+
+pedir.onclick=()=>{
+    abrirModal()
+}
+
+const cerrar=document.querySelector('.close');
+
+cerrar.onclick=()=>{
+    cerrarModal()
+}
+
+
+// Función para cerrar el modal
+function cerrarModal() {
+    const modal = document.getElementById('modalPedido');
+    modal.style.display = 'none';
+}
+
+// Función para obtener el resumen del pedido
+function obtenerResumenPedido() {
+    let resumen = '';
+    for (const spanId in productosSeleccionados) {
+        const producto = productosSeleccionados[spanId];
+        resumen += `<p>${producto.nombre}  ${producto.cantidad}</p>`;
+    }
+    return resumen;
+}
+
+// Función para calcular el precio total del pedido
+function calcularPrecioTotalPedido() {
+    return Object.values(productosSeleccionados).reduce((total, producto) => {
+        return total + producto.precioTotal;
+    }, 0);
+}
+
 
 
 

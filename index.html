@@ -29,6 +29,17 @@
 
 </div>
 
+<div id="modalPedido" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="cerrar()">&times;</span>
+        <h2>Resumen del Pedido</h2>
+        <div id="resumenPedido"></div>
+        <p id="precioTotalPedido"></p>
+        <button onclick="enviarPedido()">Ok</button>
+    </div>
+</div>
+
+
 <div class="mesa">
     <h4>Seleccione nº de mesa</h4>
     <input type="checkbox"class="mesa-btn" name="mesa" value="1">1
@@ -40,7 +51,7 @@
     <input type="checkbox" class="mesa-btn" name="mesa" value="7">7
 </div>
 
-<button id="botonPedir" class="pedir" onclick="enviarPedido()">Pedir</button>
+<button id="botonPedir" class="pedir" onclick="pedir()">Pedir</button>
 
 <div id="modal" class="modal" onclick="cerrarModal()">
     <div class="modal-contenido" onclick="detenerPropagacion(event)">
@@ -52,11 +63,9 @@
 
 
  <div class="tragos" id="tragos">
-
-
     <div class="tragos" id="bebidas">
-   
         <h2>Bebidas</h2>
+        <span><i class="fas fa-check checkIcon3" ></i>Seleccionar</span>
         <div class="tragos-item">
         <div class="nombre-precio">
         <i  class="fas fa-check checkIcon" onclick="seleccionarProducto('Brahma', 2800, 'cantidadBrahma')"></i>        
@@ -122,10 +131,10 @@
     
     </div>
 
-
+    <h2>Tragos</h2>
 
     <div class="tragos-item">
-        <h2>Tragos</h2>
+     
         <div class="nombre-precio">      
             <i  class="fas fa-check checkIcon" onclick="seleccionarProducto('Caipiriña', 2800, 'cantidadCaipiriña')"></i>
             <h3>Caipiriña. . . . . . . . . . . . . . .</h3>
@@ -256,7 +265,6 @@
 
 
 <div class="tragos" id="sinalcohol">
-    <img src="imagenes/" alt="">
     <h2 class="sin-alcohol">Sin alcohol</h2>
     <div class="tragos-item">
     <div class="nombre-precio">
@@ -329,7 +337,7 @@
         <h2>Pizza</h2><br>
         <div class="tragos-item">
         <div class="nombre-precio">
-            <i  class="fas fa-check checkIcon" onclick="seleccionarProducto('Mozzarella',8000, 'cantidadPizza')"></i>
+            <i  class="fas fa-check checkIcon" onclick="seleccionarProducto('Mozzarella',4000, 'cantidadPizza')"></i>
             <h3> Mozzarella . . . . . . . . . . . . .</h3><p class="precio">4000</p>
             <div class="cantidades"> 
                 <button onclick="decrementarCantidad('cantidadPizza')">-</button>
@@ -341,7 +349,7 @@
         </div>
         <div class="tragos-item">
             <div class="nombre-precio">
-                <i  class="fas fa-check checkIcon" onclick="seleccionarProducto('Fugazzetta',8000, 'cantidadPizza')"></i>
+                <i  class="fas fa-check checkIcon" onclick="seleccionarProducto('Fugazzetta',5000, 'cantidadPizza')"></i>
                 <h3> Fugazzetta . . . . . . . . . . . . .</h3><p class="precio">5000</p>
                 <div class="cantidades"> 
                     <button onclick="decrementarCantidad('cantidadPizza')">-</button>
@@ -353,7 +361,7 @@
               
             <div class="tragos-item">
                 <div class="nombre-precio">
-                    <i  class="fas fa-check checkIcon" onclick="seleccionarProducto(' Calabresa',8000, 'cantidadPizza')"></i>
+                    <i  class="fas fa-check checkIcon" onclick="seleccionarProducto(' Calabresa',5500, 'cantidadPizza')"></i>
                     <h3> Calabresa . . . . . . . . . . . . .</h3><p class="precio">5500</p>
                     <div class="cantidades"> 
                         <button onclick="decrementarCantidad('cantidadPizza')">-</button>
