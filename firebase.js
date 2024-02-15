@@ -57,7 +57,7 @@ window.seleccionarProducto = function(nombre, precio, spanId) {
 
 window.eliminarProducto = function(spanId) {
     delete productosSeleccionados[spanId];
-    mostrarProductos(); // Actualiza la vista después de la eliminación
+   // Actualiza la vista después de la eliminación
 }
 
 
@@ -119,8 +119,6 @@ function mostrarProductos() {
 document.addEventListener("DOMContentLoaded", function() {
     // Definir la función enviarPedido en el ámbito global
     window.enviarPedido = async function() {
-        // Obtener el número de mesa seleccionado
-     // Obtener el número de mesa seleccionado
      const mesaButtons = document.querySelectorAll(".mesa-btn:checked");
      let numeroMesa;
 
@@ -135,7 +133,9 @@ document.addEventListener("DOMContentLoaded", function() {
             title: '¡seleccione el Nº de Mesa!',
           
         });
-        return;
+       cerrarModal()
+        scroll(top)
+        return;    
      }
 
      const botonPedir = document.getElementById("botonPedir");
@@ -261,15 +261,18 @@ function cerrarModal() {
     modal.style.display = 'none';
 }
 
+
 // Función para obtener el resumen del pedido
 function obtenerResumenPedido() {
     let resumen = '';
     for (const spanId in productosSeleccionados) {
         const producto = productosSeleccionados[spanId];
-        resumen += `<p>${producto.nombre}  ${producto.cantidad}</p>`;
+        resumen += `<p class='resumen' data-span-id="${spanId}"> ${producto.nombre} ${producto.cantidad} </p>`;
     }
     return resumen;
 }
+
+
 
 // Función para calcular el precio total del pedido
 function calcularPrecioTotalPedido() {
@@ -277,8 +280,6 @@ function calcularPrecioTotalPedido() {
         return total + producto.precioTotal;
     }, 0);
 }
-
-
 
 
 

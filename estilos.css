@@ -168,7 +168,7 @@ border-bottom: 1px solid #fff;
 }
 .modal button{
     text-align: center;
-    width: 60px;
+    width: 80px;
     height: 50px;
     font-size: 1.3rem;
     background-color: #000000;
@@ -197,17 +197,26 @@ border-bottom: 1px solid #fff;
 
 .close {
     color: #ffffff;
-    float: right;
-    font-size: 35px;
+    float: left;
+    font-size: 1rem;
     font-weight: bold;
+    letter-spacing: 1px;
+    border: 1px solid rgb(255, 255, 255);
+    padding: 6px;
+
 }
 
 .close:hover,
 .close:focus {
-    
     text-decoration: none;
     cursor: pointer;
 }
+.close:active{
+    background-color:#ffffff;
+    color: #000000;
+}
+
+
 
 
 
