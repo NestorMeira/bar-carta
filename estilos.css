@@ -1,0 +1,426 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'bahnschrift';
+    background-color: black;
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+@keyframes titilar {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.9;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes moveUpDown {
+    0%, 80% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px); /* Ajusta la distancia que quieres que se mueva hacia arriba y hacia abajo */
+    }
+}
+
+.flecha {
+    background-color: transparent;
+    border: none;
+    width: 70px;
+    height: 50px;
+    position: absolute;
+    margin-top: 60px;
+    margin-left: 80%;
+
+    animation: titilar 4s infinite, moveUpDown 4s infinite; /* Agregamos la animación moveUpDown */
+}
+
+.flecha img {
+    width: 100%;
+    height: 100%;
+}
+
+.mesa{
+  text-align: center;
+    color: #fff;
+    font-size: 1.5rem;
+    border: 1px solid #7ED957;
+    margin-right: 10px;
+    height: 170px;
+}
+.mesa input{
+    width: 20px;
+    height: 20px;
+
+}
+
+
+.navbar {
+    z-index: 1;
+    background-color:transparent;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.menu-icon {
+    font-size: 1.5em;
+    cursor: pointer;
+    display: none;
+   margin-left: 90%;
+   color: #7ED957;
+}
+.menu-icon:hover{
+    color: #80ff49;
+}
+
+.menu {
+    display: flex;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+}
+
+.content {
+    padding: 20px;
+}
+
+
+
+
+
+.header{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    width: 100%;
+
+}
+
+.header .logo{
+    width:300px;
+    height: 300px;
+
+}
+
+
+.header .rayito{
+    width: 95px;
+    height: 95px;
+    margin-right: -90px;
+    margin-left: -30px;
+   
+}
+.header .logo2{
+    width:320px;
+    height: 200px;
+    margin: 0 -40px 0 0;
+}
+
+.header .pastilla{
+    width: 70px;
+    height: 90px;
+    padding-top: 70px;
+    margin-left: -10px;
+  
+} 
+
+
+
+
+.tragos{
+    display: flex;
+    flex-flow: column nowrap;
+    z-index: 1;
+    margin-bottom: 40px;
+   
+}
+.tragos h2{
+    z-index: 1;
+  color: rgb(245, 245, 245);
+  background-color:#7ED957;
+    width: 85px;
+    height: 25px;
+    margin-left:20px ;
+    padding-top:5px ;
+    padding-left: 10px;
+    border-bottom-right-radius: 20px;
+    font-size: 1.3rem;
+    font-weight: 500;
+    text-shadow: 1px 1px 2px rgb(7, 147, 17);
+}
+.tragos .sin-alcohol{
+    z-index: 1;
+    width: 130px;
+
+}
+
+
+.tragos-item{
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    color: rgb(245, 245, 245);
+    margin-left:20px ;
+    margin-top: -15px;
+}
+
+.tragos-item .nombre-precio .vino{
+    font-size: 0.9rem;
+    line-height: 2;
+    width: 175px;
+   margin-left: 10px;
+  
+}
+
+
+.tragos-item .nombre-precio .cantidades{
+    margin-top: 30px;
+}
+.tragos-item .nombre-precio .cantidades button{
+    background-color: rgba(0, 0, 0, 0.781);
+    color: #fff;
+    border: 1px solid #fff;
+    font-size: 1.1rem;
+    border-radius: 3px;
+    width: 25px;
+}
+
+.tragos-item .nombre-precio .cantidades button:active{
+    background-color: #7ED957;
+    color: black;
+   
+}
+
+
+
+
+
+
+.tragos-item .nombre-precio .vinoSj{
+ width: 185px;
+}
+
+.tragos-item .promo{
+    z-index: 1;
+    color:#7ED957 ;
+    margin-top: -10px;
+    font-size: 1rem;
+}
+.gines{
+   
+    width: 300px;
+}
+.gines span{
+   
+    margin-right: 4px;
+  
+}
+.nombre-precio{
+    z-index: 1;
+    display: flex;
+}
+.tragos-item .nombre-precio h3{
+    z-index: 1;
+    font-weight: 400;
+    padding-top: 20px;
+    font-size: 1rem;
+    width: 185px;
+  
+}
+.tragos-item .nombre-precio .precio{
+    z-index: 1;
+    color:rgba(0, 0, 0, 0.967) ;
+    background-color: rgb(255, 255, 255);
+    width: 60px;
+    height: 28px;
+    text-align: center;
+    border-radius: 3px;
+  
+    margin-right: 5px;
+    text-align: center;
+    padding-top: 10px;
+    font-size: 1.2rem;
+ 
+   
+}
+
+.tragos-item .ingredientes{
+    z-index: 1;
+    color:#7ED957;
+    font-size: 0.9rem;
+}
+
+
+
+
+.tragos-item i.fa-check {
+    color:rgba(0, 0, 0, 0.908);
+    margin-right: 5px;
+    margin-top: 35px;
+    border: 1px solid rgb(255, 255, 255);
+    height: 16px;
+    border-radius: 3px;
+    z-index: 3;
+
+}
+
+.tragos-item i.fa-check.active {
+    color: #85ffa1; 
+    animation: none; 
+
+}
+
+.promo{
+ width: 355px;
+}
+
+
+
+
+/* imagenes de fondo */
+.tragos .planeta{
+    position: absolute;
+    width: 200px;
+    height: 150px;
+    z-index: -1;
+    margin-top: 370px;
+    margin-left: 180px;
+}
+.tragos .ojo{
+    position: absolute;
+    width: 130px;
+    height: 160px;
+    z-index: -1;
+    margin-top:210px;
+}
+.tragos .ojo2{
+    position: absolute;
+    width: 170px;
+    height: 160px;
+    z-index: -1;
+    margin-left: 200px;
+    margin-top: 300px;
+}
+
+
+.footer{
+    display: flex;
+    align-items: flex-start;
+    height: 100px;
+    margin-top: -40px;
+    margin-bottom: 40px;
+
+
+}
+.footer a{
+color: #7ED957;
+list-style-type: none;
+text-decoration: none;
+font-weight: 500;
+margin-top: 60px;
+margin-left: 5%;
+animation: titilar 4s infinite;
+}
+.footer a i{
+    font-size: 1.5rem;
+
+}
+.footer a:hover{
+    color:#7ED957;
+}
+
+.pedir{
+    position: -webkit-sticky;
+    position: sticky; 
+    z-index: 5;
+    top: 540px;
+    margin-left: 74%;
+    width: 95px;
+    height: 95px;
+    font-size: 1.7rem;
+    border-radius: 50px;
+    background-color: rgb(0, 0, 0);
+    color:#7ED957 ;
+    border: 2px solid#7ED957;
+    font-weight: 700;
+    box-shadow: 1.3px 1.3px 5px 1.3px rgb(116, 199, 67);
+    text-shadow: 1px 1px 2px rgb(12, 118, 63);
+    animation: titilar 2s infinite;
+   display: none;
+
+}
+
+
+
+@media only screen and (max-width: 768px) {
+    .menu {
+        z-index: 2;
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color:black;
+        color: white;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 1.3s ease-in-out;
+    }
+
+    .menu.show {
+        display: flex;
+        opacity: 1;
+        pointer-events: auto;
+
+    }
+
+    .menu a {
+        text-align: center;
+        width: 100%;
+        border-bottom: 1px solid white;
+    }
+    .menu a:hover{
+        color:#7ED957 ;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+    .footer{
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+}
+
+@media (min-width:470px){
+    body{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .gines{
+        width: 80%;
+       
+    }
+    .menu-icon{
+        margin-left: 90%;
+    }
+
+}

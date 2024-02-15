@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    <title>menu-baar</title>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <div class="menu">
+            <a href="#tragos">Tragos</a>
+            <a href="#bebidas">Bebidas</a>
+            <a href="#sinalcohol">Sin alcohol</a>
+            <a href="#pizza">Pizza</a>
+        </div>
+    </div>
+
+  <div class="header">
+
+    <img src="imagenes/logobar.png" class="logo" alt="imagen">
+ >
+  </div>
+
+</div>
+
+<div class="mesa">
+    <h4>Seleccione nº de mesa</h4>
+    <input type="checkbox"class="mesa-btn" name="mesa" value="1">1
+    <input type="checkbox" class="mesa-btn" name="mesa" value="2">2
+    <input type="checkbox" class="mesa-btn" name="mesa" value="3">3
+    <input type="checkbox" class="mesa-btn" name="mesa" value="4">4
+    <input type="checkbox" class="mesa-btn" name="mesa" value="5">5
+    <input type="checkbox" class="mesa-btn" name="mesa" value="6">6
+    <input type="checkbox" class="mesa-btn" name="mesa" value="7">7
+</div>
+
+<button id="botonPedir" class="pedir" onclick="enviarPedido()">Pedir</button>
+
+<div id="modal" class="modal" onclick="cerrarModal()">
+    <div class="modal-contenido" onclick="detenerPropagacion(event)">
+        <div id="resultado"></div>
+    </div>
+</div>
+
+
+
+
+ <div class="tragos" id="tragos">
+
+
+    <div class="tragos" id="bebidas">
+   
+        <h2>Bebidas</h2>
+        <div class="tragos-item">
+        <div class="nombre-precio">
+        <i  class="fas fa-check checkIcon" onclick="seleccionarProducto('Brahma', 2800, 'cantidadBrahma')"></i>        
+        <h3>Brahma . . . . . . . . . . . . . . .</h3><p class="precio">2800</p>
+        <div class="cantidades">
+            <button onclick="decrementarCantidad('cantidadBrahma')">-</button>
+            <span id="cantidadBrahma">0</span>
+            <button onclick="incrementarCantidad('cantidadBrahma')">+</button>
+        </div>
+        </div>  
+        </div>
+    
+            <div class="tragos-item">
+            <div class="nombre-precio">
+            <i  class="fas fa-check checkIcon" onclick="seleccionarProducto('Heineken', 3500, 'cantidadHeineken')"></i>
+            <h3>Heineken. . . . . . . . . . . . . .</h3><p class="precio">3500</p>
+           <div class="cantidades">
+            <button onclick="decrementarCantidad('cantidadHeineken')">-</button>
+            <span id="cantidadHeineken">0</span>
+            <button onclick="incrementarCantidad('cantidadHeineken')">+</button>
+            </div>
+            </div>
+            </div>
+    
+           <div class="tragos-item">
+           <div class="nombre-precio">
+            <i  class="fas fa-check checkIcon" onclick="seleccionarProducto('Stella', 3500, 'cantidadStella')"></i>
+            <h3>Stella. . . . . . . . . . . . . . . . .</h3><p class="precio">3500</p>
+            <div class="cantidades">
+            <button onclick="decrementarCantidad('cantidadStella')">-</button>
+            <span id="cantidadStella">0</span>
+            <button onclick="incrementarCantidad('cantidadStella')">+</button>
+           </div>
+            </div>  
+            </div>
+    
+        <div class="tragos-item">
+        <div class="nombre-precio">
+            <i  class="fas fa-check checkIcon" onclick="seleccionarProducto('Cerveza Honey', 2300, 'cantidadCervezaHoney')"></i>
+            <h3>Cerveza tirada de barril Honey .</h3><p class="precio">2300</p>
+            <div class="cantidades">
+                <button onclick="decrementarCantidad('cantidadCervezaHoney')">-</button>
+                <span id="cantidadCervezaHoney">0</span>
+                <button onclick="incrementarCantidad('cantidadCervezaHoney')">+</button>
+            </div>
+        </div>  
+        </div>
+    
+        <div class="tragos-item">
+            <div class="nombre-precio">
+                <i  class="fas fa-check checkIcon" onclick="seleccionarProducto('Cerveza Ipa', 2500, 'cantidadCervezaIpa')"></i>
+                <h3>Cerveza tirada de barril Ipa</h3><p class="precio">2500</p>
+                <div class="cantidades">
+                    <button onclick="decrementarCantidad('cantidadCervezaIpa')">-</button>
+                    <span id="cantidadCervezaIpa">0</span>
+                    <button onclick="incrementarCantidad('cantidadCervezaIpa')">+</button>
+                </div>
+            </div>
+        </div>
+      
+        
+            <img src="imagenes/trago4.png" class="fotos" alt="Imagen">
+    
+    </div>
+
+
+
+    <div class="tragos-item">
+        <h2>Tragos</h2>
+        <div class="nombre-precio">      
+            <i  class="fas fa-check checkIcon" onclick="seleccionarProducto('Caipiriña', 2800, 'cantidadCaipiriña')"></i>
+            <h3>Caipiriña. . . . . . . . . . . . . . .</h3>
+            <p class="precio">2800</p>
+            <div class="cantidades">                
+                <button onclick="decrementarCantidad('cantidadCaipiriña')">-</button>
+                <span id="cantidadCaipiriña">0</span>
+                <button onclick="incrementarCantidad('cantidadCaipiriña')">+</button>
+            </div>
+        </div>  
+        <p class="ingredientes">(cachaza, limón y azúcar)</p>
+    </div>
+    
+    <div class="tragos-item">
+        <div class="nombre-precio">
+            <i  class="fas fa-check checkIcon" onclick="seleccionarProducto('Caipirosca', 2500, 'cantidadCaipirosca')"></i>
+            <h3>Caipirosca . . . . . . . . . . . . .</h3>
+            <p class="precio">2500</p>
+            <div class="cantidades">
+                <button onclick="decrementarCantidad('cantidadCaipirosca')">-</button>
+                <span id="cantidadCaipirosca">0</span>
+                <button onclick="incrementarCantidad('cantidadCaipirosca')">+</button>
+            </div>
+         
+        </div>  
+        <p class="ingredientes">(vodka, limón y azúcar)</p>
+    </div>
+    
+    <div class="tragos-item">
+        <div class="nombre-precio">
+        <i  class="fas fa-check checkIcon" onclick="seleccionarProducto('Mojito ', 3000, 'cantidadMojito')"></i>
+        <h3>Mojito . . . . . . . . . . . . . . . . .</h3><p class="precio">3000</p>
+        <div class="cantidades">
+            <button onclick="decrementarCantidad('cantidadMojito')">-</button>
+            <span id="cantidadMojito">0</span>
+            <button onclick="incrementarCantidad('cantidadMojito')">+</button>
+        </div>
+    </div>  
+        <p class="ingredientes">(ron, limón, azúcar, menta y <br> gaseosa de lima)</p>
+    </div>
+
+    <div class="tragos-item">
+        <div class="nombre-precio">
+        <i  class="fas fa-check checkIcon" onclick="seleccionarProducto('Daikiri ', 3000, 'cantidadDaikiri')"></i>
+        <h3>Daikiri. . . . . . . . . . . . . . . . .</h3><p class="precio">3000</p>
+        <div class="cantidades">
+            <button onclick="decrementarCantidad('cantidadDaikiri')">-</button>
+            <span id="cantidadDaikiri">0</span>
+            <button onclick="incrementarCantidad('cantidadDaikiri')">+</button>
+        </div>
+    </div>  
+        <p class="ingredientes">(frutilla, durazno y maracuyá)</p>
+    </div>
+
+    <div class="tragos-item">
+        <div class="nombre-precio">
+        <i class="fas fa-check checkIcon" onclick="seleccionarProducto('Fernet cola  ', 3000, 'cantidadFernetcola ')"></i>    
+        <h3>Fernet cola . . . . . . . . . . . .</h3><p class="precio">3000</p>
+        <div class="cantidades">
+            <button onclick="decrementarCantidad('cantidadFernetcola ')">-</button>
+            <span id="cantidadFernetcola ">0</span>
+            <button onclick="incrementarCantidad('cantidadFernetcola ')">+</button>
+        </div>
+    </div>  
+        <p class="ingredientes"></p>
+    </div>
+
+    <div class="tragos-item">
+        <div class="nombre-precio">
+        <i  class="fas fa-check checkIcon" onclick="seleccionarProducto('Cuba libre  ', 2800, 'cantidadCubalibre ')"></i>
+        <h3>Cuba libre . . . . . . . . . . . . .</h3><p class="precio">2800</p>
+        <div class="cantidades">
+            <button onclick="decrementarCantidad('cantidadCubalibre ')">-</button>
+            <span id="cantidadCubalibre ">0</span>
+            <button onclick="incrementarCantidad('cantidadCubalibre ')">+</button>
+        </div>
+    </div>  
+        <p class="ingredientes">(limón, ron y coca-cola)</p>
+    </div>
+
+    <div class="tragos-item">
+        <div class="nombre-precio">
+        <i  class="fas fa-check checkIcon" onclick="seleccionarProducto('Tequila shot', 1000, 'cantidadTequilashot')"></i>
+        <h3>Tequila shot. . . . . . . . . . . .</h3><p class="precio">1000</p>
+        <div class="cantidades">           
+            <button onclick="decrementarCantidad('cantidadTequilashot')">-</button>
+            <span id="cantidadTequilashot">0</span>
+            <button onclick="incrementarCantidad('cantidadTequilashot')">+</button>
+        </div>
+    </div>  
+        <p class="ingredientes"></p>
+    </div>
+
+    <div class="tragos-item">
+        <div class="nombre-precio">
+        <i  class="fas fa-check checkIcon" onclick="seleccionarProducto('Garibaldi', 2800, 'cantidadGaribaldi')"></i>
+        <h3>Garibaldi . . . . . . . . . . . . . .</h3><p class="precio">2800</p>
+        <div class="cantidades">
+            <button onclick="decrementarCantidad('cantidadGaribaldi')">-</button>
+            <span id="cantidadGaribaldi">0</span>
+            <button onclick="incrementarCantidad('cantidadGaribaldi')">+</button>
+        </div>
+    </div>  
+        <p class="ingredientes">(bitter rojo campari y jugo de <br> naranja)</p>
+    </div>
+
+    <div class="tragos-item">
+        <div class="nombre-precio">
+        <i  class="fas fa-check checkIcon" onclick="seleccionarProducto('Sex on the beach', 2500, 'cantidadSexonthebeach')"></i>
+        <h3>Sex on the beach. . . . . . .</h3><p class="precio">2500</p>
+        <div class="cantidades">
+            <button onclick="decrementarCantidad('cantidadSexonthebeach')">-</button>
+            <span id="cantidadSexonthebeach">0</span>
+            <button onclick="incrementarCantidad('cantidadSexonthebeach')">+</button>
+        </div>
+    </div>  
+        <p class="ingredientes">(vodka, licor de durazno, jugo<br> de 
+            naranja y jugo de arándano)
+            </p>
+    </div>
+
+        <img src="imagenes/trago1.png" class="fotos" alt="Imagen">
+        
+ </div> 
+
+
+
+
+
+<div class="tragos" id="sinalcohol">
+    <img src="imagenes/" alt="">
+    <h2 class="sin-alcohol">Sin alcohol</h2>
+    <div class="tragos-item">
+    <div class="nombre-precio">
+        <i  class="fas fa-check checkIcon" onclick="seleccionarProducto('Virgen Mojito',1500, 'cantidadVirgenMojito')"></i>
+        <h3>Virgen Mojito. . . . . . . . . . .</h3><p class="precio">1500</p>
+        <div class="cantidades">
+            <button onclick="decrementarCantidad('cantidadVirgenMojito')">-</button>
+            <span id="cantidadVirgenMojito">0</span>
+            <button onclick="incrementarCantidad('cantidadVirgenMojito')">+</button>
+        </div>
+    </div>  
+    <p class="ingredientes">(menta,limón, azúcar y sprite)</p>
+    </div>
+    
+    <div class="tragos-item">
+        <div class="nombre-precio">
+            <i  class="fas fa-check checkIcon" onclick="seleccionarProducto('Virgen Daikiri',1800, 'cantidadVirgenDaikiri')"></i>
+            <h3>Virgen Daikiri . . . . . . . . .  .</h3><p class="precio">1800</p>
+            <div class="cantidades">
+                <button onclick="decrementarCantidad('cantidadVirgenDaikiri')">-</button>
+                <span id="cantidadVirgenDaikiri">0</span>
+                <button onclick="incrementarCantidad('cantidadVirgenDaikiri')">+</button>
+            </div>
+        </div>  
+        <p class="ingredientes">(frutilla, durazno o maracuyá,<br> azúcar y agua)</p>
+        </div>
+
+        <div class="tragos-item">
+            <div class="nombre-precio">
+                <i  class="fas fa-check checkIcon" onclick="seleccionarProducto('Sun Summer',1800, 'cantidadSunSummer')"></i>
+                <h3>Sun Summer. . . . . . . . . . .</h3><p class="precio">1800</p>
+                <div class="cantidades">
+                <button onclick="decrementarCantidad('cantidadSunSummeri')">-</button>
+                <span id="cantidadSunSummer">0</span>
+                <button onclick="incrementarCantidad('cantidadSunSummer')">+</button>
+               </div>
+            </div>  
+            <p class="ingredientes">(naranja, durazno, granadina)</p>
+            </div>
+
+            <div class="tragos-item">
+                <div class="nombre-precio">
+                    <i  class="fas fa-check checkIcon" onclick="seleccionarProducto('Coca-cola',2800, 'cantidadCoca-cola')"></i>
+                    <h3>Coca-cola . . . . . . . . . . . .  .</h3><p class="precio">2800</p>
+                    <div class="cantidades">
+                        <button onclick="decrementarCantidad('cantidadCoca-cola')">-</button>
+                        <span id="cantidadCoca-cola">0</span>
+                        <button onclick="incrementarCantidad('cantidadCoca-cola')">+</button>
+                       </div>
+                </div>  
+                <p class="ingredientes"></p>
+                </div>
+
+                <div class="tragos-item">
+                    <div class="nombre-precio">
+                        <i  class="fas fa-check checkIcon" onclick="seleccionarProducto('Sprite ',2800, 'cantidadSprite')"></i>
+                        <h3>Sprite. . . . . . . . . . . . . . . .  .</h3><p class="precio">2800</p>
+                         <div class="cantidades">
+                        <button onclick="decrementarCantidad('cantidadSprite')">-</button>
+                        <span id="cantidadSprite">0</span>
+                        <button onclick="incrementarCantidad('cantidadSprite')">+</button>
+                       </div>
+                    </div>  
+                    <p class="ingredientes"></p>
+                    </div>
+                    <img src="imagenes/trago3.png" class="fotos" alt="Imagen">
+     </div>
+
+    <div class="tragos" id="pizza">
+        <h2>Pizza</h2><br>
+        <div class="tragos-item">
+        <div class="nombre-precio">
+            <i  class="fas fa-check checkIcon" onclick="seleccionarProducto('Mozzarella',8000, 'cantidadPizza')"></i>
+            <h3> Mozzarella . . . . . . . . . . . . .</h3><p class="precio">4000</p>
+            <div class="cantidades"> 
+                <button onclick="decrementarCantidad('cantidadPizza')">-</button>
+                <span id="cantidadPizza">0</span>
+                <button onclick="incrementarCantidad('cantidadPizza')">+</button>
+               </div>
+        </div>  
+       
+        </div>
+        <div class="tragos-item">
+            <div class="nombre-precio">
+                <i  class="fas fa-check checkIcon" onclick="seleccionarProducto('Fugazzetta',8000, 'cantidadPizza')"></i>
+                <h3> Fugazzetta . . . . . . . . . . . . .</h3><p class="precio">5000</p>
+                <div class="cantidades"> 
+                    <button onclick="decrementarCantidad('cantidadPizza')">-</button>
+                    <span id="cantidadPizza">0</span>
+                    <button onclick="incrementarCantidad('cantidadPizza')">+</button>
+                   </div>
+            </div>
+        </div>
+              
+            <div class="tragos-item">
+                <div class="nombre-precio">
+                    <i  class="fas fa-check checkIcon" onclick="seleccionarProducto(' Calabresa',8000, 'cantidadPizza')"></i>
+                    <h3> Calabresa . . . . . . . . . . . . .</h3><p class="precio">5500</p>
+                    <div class="cantidades"> 
+                        <button onclick="decrementarCantidad('cantidadPizza')">-</button>
+                        <span id="cantidadPizza">0</span>
+                        <button onclick="incrementarCantidad('cantidadPizza')">+</button>
+                       </div>
+                </div>  
+            </div>
+        <img src="imagenes/pizza.png" class="fotos" alt="Imagen">
+        </div>
+
+
+<footer class="footer">
+    
+ <button class="flecha" onclick= scrollToTop() ><img src="imagenes/flechita.png" alt="Imagen"></button>
+
+    <a href="#"  rel="noopener noreferrer">
+        <i class="fab fa-instagram"></i>mi_bar
+    </a>
+</footer>
+    <script  type="module" src="firebase.js"></script>
+    <script src="menu.js"></script>
+    <script src="scroll.js"></script>
+</body>
+</html>
