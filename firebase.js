@@ -3,12 +3,12 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebas
 import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-firestore.js";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyA5jOBbot-TCi8u8F6jZKpl32CNMB3pBfs",
-    authDomain: "menu-bar-ae6a6.firebaseapp.com",
-    projectId: "menu-bar-ae6a6",
-    storageBucket: "menu-bar-ae6a6.appspot.com",
-    messagingSenderId: "769889452897",
-    appId: "1:769889452897:web:316c9d131603cc561c3b20"
+    apiKey: "AIzaSyAwk0JfYhyKD49Bv-CA-SAKgoNw5LUiywo",
+    authDomain: "fuul-bar.firebaseapp.com",
+    projectId: "fuul-bar",
+    storageBucket: "fuul-bar.appspot.com",
+    messagingSenderId: "391659395872",
+    appId: "1:391659395872:web:34afeb420f8243afc01545"
   };
 
 
